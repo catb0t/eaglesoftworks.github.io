@@ -1,21 +1,26 @@
 import Vue from "vue";
-import HelloComponent from "./components/Hello.vue";
-import HelloDecoratorComponent from "./components/HelloDecorator.vue";
+import VueRouter from "vue-router";
+import home from "./components/home.vue";
+import sieged from "./components/sieged.vue";
+
+Vue.use(VueRouter);
+
+const routes = [
+  { path: '/', component: home },
+  { path: '/home', component: home },
+  { path: '/sieged', component: sieged },
+  { path: '/game', component: sieged },
+  { path: '/sieged-game', component: sieged }
+]
+
+const router = new VueRouter({
+  routes
+})
 
 let v = new Vue({
     el: "#app",
-    template: `
-    <div>
-        Name: <input v-model="name" type="text">
-        <h1>Hello Component</h1>
-        <hello-component :name="name" :initialEnthusiasm="5" />
-        <h1>Hello Decorator Component</h1>
-        <hello-decorator-component :name="name" :initialEnthusiasm="5" />
-        </div>
-    `,
-    data: { name: "World" },
     components: {
-        HelloComponent,
-        HelloDecoratorComponent
-    }
+      home, sieged
+    },
+    router
 });
