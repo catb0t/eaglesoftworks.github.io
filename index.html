@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon application-icon" type="application/x-icon" href="eagle.ico" />
+    <link rel="icon application-icon" type="application/x-icon" href="src/img/eagle.ico" />
   </head>
 
-<body>
-    <div id="app">
-      <div id="header">
-        <router-link to="home">Home</router-link>
-        <router-link to="sieged">Sieged Game</router-link>
+  <body>
+      <div id="app">
+        <div id="header">
+          <router-link to="home">Home</router-link>
+          <router-link to="sieged">Sieged Game</router-link>
+        </div>
+
+        <router-view></router-view>
       </div>
+  </body>
 
-      <router-view></router-view>
-    </div>
-</body>
-
-<script src="./dist/build.js"></script>
+  <script src="./dist/bundle.js"></script>
 
 </html>

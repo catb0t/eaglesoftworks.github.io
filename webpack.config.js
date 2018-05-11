@@ -1,13 +1,15 @@
-
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
-  entry: './src/index.ts',
+  mode: "development",
+  entry: './src/script/index.ts',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -39,11 +41,19 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.s[ca]ss$/,
+        use: [
+            process.env.NODE_ENV !== 'production'
+              ? 'style-loader'
+              : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"
+        ]
       }
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js', '.vue', '.json'],
+    extensions: [".ts", ".js", ".vue", ".json", ".sass", ".css"],
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
@@ -55,7 +65,15 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
+    new VueLoaderPlugin()
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -70,7 +88,7 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {
-        warnings: false
+        warnings: true
       }
     }),
     new webpack.LoaderOptionsPlugin({
