@@ -1,6 +1,6 @@
 <template>
   <div>
-    Sieged game
+    Sieged game view
     <!-- WebGL loader -->
   </div>
 </template>

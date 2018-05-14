@@ -27,12 +27,6 @@ const router = new VueRouter({
 // whole app router-aware.
 let v = new Vue({
     el: "#app",
-    template: `
-    <div>
-      <home />
-      <sieged />
-    </div>
-    `,
     components: {
       home, sieged
     },
