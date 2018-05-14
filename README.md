@@ -1,4 +1,4 @@
-PubSubNet web client
---- 
+EagleSoftWorks Home
+---
 
-modern, reactive and simple web client for pubsubnet 
+about eaglesoft and home of Sieged game

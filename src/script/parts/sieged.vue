@@ -4,9 +4,10 @@
     <!-- WebGL loader -->
 
     <!-- might need to use CORSBuster / SOPBuster -->
-    <iframe id="game-viewer" src="https://raw.githubusercontent.com/eaglesoftworks/sieged/master/Build/WebGLBuild/index.html" />
-
-    </iframe>
+    <div>
+      <iframe id="game-viewer" src="https://cors-buster-tbgktfqyku.now.sh/raw.githubusercontent.com/eaglesoftworks/sieged/master/Build/WebGLBuild/index.html" >
+      </iframe>
+    </div>
   </div>
 </template>
 
@@ -18,6 +19,8 @@ export default Vue.extend({
 });
 </script>
 
-<style>
-
+<style lang="scss">
+.game-viewer {
+  display: block
+}
 </style>

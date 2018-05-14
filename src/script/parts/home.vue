@@ -1,6 +1,9 @@
 <template>
   <div>
-    Home view
+    <h2>Home view</h2>
+    <p>
+      About EagleSoftWorks
+    </p>
   </div>
 </template>
 
@@ -12,6 +15,5 @@ export default Vue.extend({
 });
 </script>
 
-<style>
-
+<style lang="sass">
 </style>
