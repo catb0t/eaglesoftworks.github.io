@@ -5,6 +5,7 @@
 
     <!-- might need to use CORSBuster / SOPBuster -->
     <div>
+      <!-- https://github.com/wmhilton/cors-buster -->
       <iframe id="game-viewer" src="https://cors-buster-tbgktfqyku.now.sh/raw.githubusercontent.com/eaglesoftworks/sieged/master/Build/WebGLBuild/index.html" >
       </iframe>
     </div>
