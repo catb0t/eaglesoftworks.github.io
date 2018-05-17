@@ -1,24 +1,28 @@
 <!doctype html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon application-icon" type="application/x-icon" href="src/img/eagle.ico" />
+    <title>EagleSoftWorks</title>
+    <link type="application/x-icon" rel="icon" href="src/img/eagle.ico" />
   </head>
 
   <body>
-      <div id="app">
-        <div id="header">
-          <router-link to="home">Home</router-link>
-          <router-link to="sieged">Sieged Game</router-link>
-        </div>
+    <div id="app">
 
-        <router-view></router-view>
-      </div>
+      <nav class="level">
+        <router-link class="level-item has-text-centered" to="/">Home</router-link>
+        <h1 class="title is-1">EagleSoftWorks</h1>
+        <router-link class="level-item has-text-centered" to="/overview">Sieged game</router-link>
+      </nav>
+
+      <router-view>
+
+      </router-view>
+    </div>
   </body>
-
-  <script src="./dist/bundle.js"></script>
+  <script type="text/javascript" src="./dist/bundle.js"></script>
 
 </html>
+
